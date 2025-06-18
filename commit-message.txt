@@ -1,5 +1,4 @@
-Refactor useEffect to trigger fetch on query change and reset state for short queries
+Add handlers for selecting and closing movie based on movie ID
 
-- Refactor useEffect hook to link fetch request to user query input
-- Included query in dependency array to re-run effect on each change
-- Implemented state reset when query length is less than 3 characters
+- Implemented handleSelectedMovie to set selected movie ID
+- Added handleCloseMovie to reset selected ID and close details view
