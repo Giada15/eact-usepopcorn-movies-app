@@ -1,4 +1,7 @@
-Add handlers for selecting and closing movie based on movie ID
+Add fetch logic for movie details and render with Loader and StarRating components
 
-- Implemented handleSelectedMovie to set selected movie ID
-- Added handleCloseMovie to reset selected ID and close details view
+- Implemented fetch request in useEffect using selected movie ID
+- Added JSX to display detailed movie information
+- Integrated Loader component during data fetch
+- Inserted previously created StarRating component in movie details view
+
