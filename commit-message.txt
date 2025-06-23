@@ -1,7 +1,9 @@
-Add fetch logic for movie details and render with Loader and StarRating components
+Implement user rating with StarRating component and watched list functionality
 
-- Implemented fetch request in useEffect using selected movie ID
-- Added JSX to display detailed movie information
-- Integrated Loader component during data fetch
-- Inserted previously created StarRating component in movie details view
+- Display rating using the StarRating component
+- Use onSetRating from StarRating to set user rating
+- Conditionally display "Add to List" button when a rating exists
+- Implement handleAddWatched to update the watched movies array
+- Add handleDeleteWatched to update the state when a watched movie is removed
+
 
