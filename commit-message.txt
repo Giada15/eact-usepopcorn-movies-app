@@ -1,9 +1,6 @@
-Implement user rating with StarRating component and watched list functionality
+feat: add AbortController to prevent redundant fetches on re-renders
 
-- Display rating using the StarRating component
-- Use onSetRating from StarRating to set user rating
-- Conditionally display "Add to List" button when a rating exists
-- Implement handleAddWatched to update the watched movies array
-- Add handleDeleteWatched to update the state when a watched movie is removed
+Implemented AbortController to cancel ongoing fetch requests when the component re-renders or unmounts. This reduces the number of unnecessary network calls and improves performance by using controller.abort() in the cleanup function.
+
 
 
