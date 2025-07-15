@@ -234,12 +234,25 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     Genre: genre,
   } = movie;
 
-  /* eslint-disable */
   // if (imdbRating > 8) {
   //   [isTop, setIsTop] = useState(true);
   // }
 
   // if (imdbRating > 8) return <p>Greatest!</p>;
+
+  // only on first re render
+  // const [isTop, setIsTop] = useState(imdbRating > 8);
+  // console.log(isTop);
+
+  // useEffect(function () {
+  //   setIsTop(imdbRating > 8);
+  // }, imdbRating);
+
+  // derived state (updates when component re renders)
+  const isTop = imdbRating > 8;
+  console.log(isTop);
+
+  // const [avgRating, setAvgRating] = useState(0);
 
   function handleAdd() {
     const newWatchedMovie = {
@@ -251,8 +264,18 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
       runtime: Number(runtime.split(" ").at(0)),
       userRating,
     };
+
     onAddWatched(newWatchedMovie);
     onCloseMovie();
+    /*
+    setAvgRating(Number(imdbRating));
+
+    // doesn't use the updated value
+    // setAvgRating((avgRating + userRating) / 2);
+
+    // uses the updated value
+    setAvgRating((currAvgRating) => (currAvgRating + userRating) / 2);
+    */
   }
 
   useEffect(
@@ -323,6 +346,8 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
               </p>
             </div>
           </header>
+
+          {/* <p>{avgRating}</p> */}
 
           <section>
             <div className="rating">
