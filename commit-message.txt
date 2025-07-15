@@ -1,6 +1,7 @@
-feat: add AbortController to prevent redundant fetches on re-renders
+feat: add keyboard listener to close movie details via Escape key
 
-Implemented AbortController to cancel ongoing fetch requests when the component re-renders or unmounts. This reduces the number of unnecessary network calls and improves performance by using controller.abort() in the cleanup function.
+Added a keydown event listener inside a useEffect to allow closing the movie details view with the Escape key. The listener is properly cleaned up in the useEffect returned cleanup function.
+
 
 
 
