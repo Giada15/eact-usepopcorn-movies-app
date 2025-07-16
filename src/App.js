@@ -12,7 +12,6 @@ export default function App() {
   const [error, setError] = useState("");
   const [query, setQuery] = useState("");
   const [selectedId, setSelectedId] = useState(null);
-  // const [watched, setWatched] = useState([]);
   const [watched, setWatched] = useState(function () {
     const storedValue = localStorage.getItem("watched");
     return JSON.parse(storedValue);
@@ -156,6 +155,12 @@ function Logo() {
 }
 
 function Search({ query, setQuery }) {
+  useEffect(function () {
+    const el = document.querySelector(".search");
+    console.log(el);
+    el.focus();
+  }, []);
+
   return (
     <input
       className="search"
